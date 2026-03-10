@@ -36,6 +36,9 @@ class SendOutdatedReminders
             fn (InstalledPackage $r) => $r->direct && $r->isOutdated()
         );
 
+        $ignored = $this->settings->getIgnoredOutdated();
+        $outdated = array_filter($outdated, fn (InstalledPackage $row) => !in_array($row->package, $ignored));
+
         if (!$outdated) {
             return; // Everything up to date, yay!
         }

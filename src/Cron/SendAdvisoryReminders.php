@@ -4,6 +4,7 @@ namespace Corrivate\ComposerDashboard\Cron;
 
 use Corrivate\ComposerDashboard\Model\Composer\Audit;
 use Corrivate\ComposerDashboard\Model\Config\Settings;
+use Corrivate\ComposerDashboard\Model\Value\AuditIssue;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\MailException;
 use Magento\Framework\Mail\Template\TransportBuilder;
@@ -29,7 +30,11 @@ class SendAdvisoryReminders
             return; // Nobody listening, boo!
         }
 
-        if (!$this->audit->getRows(forceRefresh: true)) {
+        $rows = $this->audit->getRows(forceRefresh: true);
+        $ignored = $this->settings->getIgnoredAdvisories();
+        $rows = array_filter($rows, fn (AuditIssue $row) => !in_array($row->package, $ignored));
+
+        if (!$rows) {
             return; // No security advisories, yay!
         }
 
