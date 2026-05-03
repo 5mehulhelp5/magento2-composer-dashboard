@@ -2,7 +2,7 @@
 
 namespace Corrivate\ComposerDashboard\Model\Value;
 
-readonly class InstalledPackage
+class InstalledPackage
 {
     public const SEMVER_UP_TO_DATE = 4;
     public const SEMVER_SAFE_UPDATE = 3;
@@ -16,19 +16,19 @@ readonly class InstalledPackage
     ];
 
     public function __construct(
-        public string $package,
-        public bool   $direct,
-        public string $homepage,
-        public string $source,
-        public string $version,
-        public string $release_age,
-        public string $release_date,
-        public string $latest,
-        public string $latest_status,
-        public string $latest_release_date,
-        public string $description,
-        public bool   $abandoned,
-        public int    $semver_status // Using numeric codes makes this sortable
+        public readonly string $package,
+        public readonly bool   $direct,
+        public readonly string $homepage,
+        public readonly string $source,
+        public readonly string $version,
+        public readonly string $release_age,
+        public readonly string $release_date,
+        public readonly string $latest,
+        public readonly string $latest_status,
+        public readonly string $latest_release_date,
+        public readonly string $description,
+        public readonly bool   $abandoned,
+        public readonly int    $semver_status // Using numeric codes makes this sortable
     )
     {
     }

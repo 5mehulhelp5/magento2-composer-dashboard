@@ -2,7 +2,9 @@
 
 ## Unversioned
 ### Fixed
-- PHPStan level 8
+* PHPStan level 8
+### Added
+* PHP 8.1 compatibility
 
 ## 0.6.1
 ### Fixed

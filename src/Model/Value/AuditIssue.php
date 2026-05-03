@@ -2,7 +2,7 @@
 
 namespace Corrivate\ComposerDashboard\Model\Value;
 
-readonly class AuditIssue
+class AuditIssue
 {
     public const SEVERITY_UNKNOWN = 1;
     public const SEVERITY_CRITICAL = 2;
@@ -18,13 +18,13 @@ readonly class AuditIssue
     ];
 
     public function __construct(
-        public string $package,
-        public string $title,
-        public string $cve,
-        public string $link,
-        public int    $severity,
-        public string $severity_original,
-        public string $reported
+        public readonly string $package,
+        public readonly string $title,
+        public readonly string $cve,
+        public readonly string $link,
+        public readonly int    $severity,
+        public readonly string $severity_original,
+        public readonly string $reported
     )
     {
     }
