@@ -1,6 +1,6 @@
 # Changelog
 
-## Unversioned
+## 0.6.2
 ### Fixed
 * PHPStan level 8
 * `__('')` that broke `bin/magento i18n:collect-phrases`
