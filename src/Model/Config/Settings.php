@@ -65,7 +65,7 @@ class Settings
         return (bool)$this->scopeConfig->getValue(self::XPATH_API_ENABLED);
     }
 
-    /** return string[] */
+    /** @return string[] */
     public function getIgnoredAdvisories(): array
     {
         $value = (string)$this->scopeConfig->getValue(self::XPATH_ADVISORY_IGNORED_PACKAGES);
@@ -76,7 +76,7 @@ class Settings
         return array_filter($items);
     }
 
-    /** return string[] */
+    /** @return string[] */
     public function getIgnoredOutdated(): array
     {
         $value = (string)$this->scopeConfig->getValue(self::XPATH_OUTDATED_IGNORED_PACKAGES);

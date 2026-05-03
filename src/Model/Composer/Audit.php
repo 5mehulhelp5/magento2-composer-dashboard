@@ -74,12 +74,12 @@ class Audit implements AuditInterface
     }
 
 
-    /** @inheritDoc */
-    public function getList(): array
+    /** @throws LocalizedException */
+    public function getList(): array // @phpstan-ignore missingType.iterableValue
     {
         if (!$this->settings->isApiEnabled()) {
             throw new LocalizedException(__("Composer Dashboard API is not enabled in the configuration."));
         }
-        return json_decode(json_encode($this->getRows()), true);
+        return json_decode((string)json_encode($this->getRows()), true);
     }
 }

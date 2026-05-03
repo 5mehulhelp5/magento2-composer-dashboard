@@ -10,6 +10,7 @@ class CronSchedule implements OptionSourceInterface
     private const WEEKLY = '0 3 * * 1'; // at 3AM
     private const DAILY = '0 3 * * *'; // at 3AM
 
+    /** @return array<int, array{value: string, label: string}> */
     public function toOptionArray(): array
     {
         return [
