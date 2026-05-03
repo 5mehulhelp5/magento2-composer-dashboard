@@ -5,6 +5,6 @@ namespace Corrivate\ComposerDashboard\Api;
 
 interface InstalledPackagesInterface
 {
-    /** @return array */
-    public function getList(): array; // @phpstan-ignore missingType.iterableValue
+    /** @return mixed[] */
+    public function getList(): array;
 }

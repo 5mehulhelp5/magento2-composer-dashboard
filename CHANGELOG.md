@@ -4,6 +4,7 @@
 ### Fixed
 * PHPStan level 8
 * `__('')` that broke `bin/magento i18n:collect-phrases`
+* Change docblocks in interfaces that broke SOAP wsdl
 ### Added
 * PHP 8.1 compatibility
 
