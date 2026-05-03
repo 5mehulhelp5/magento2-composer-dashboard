@@ -9,13 +9,13 @@ use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class AbandonedOptions implements ArgumentInterface, OptionSourceInterface
 {
-    /** @return array<array{value: bool|string, label: Phrase}> */
+    /** @return array<array{value: bool|string, label: string}> */
     public function toOptionArray(): array
     {
         return [
-            ['value' => '', 'label' => __('')],
-            ['value' => true, 'label' => __('Abandoned')],
-            ['value' => false, 'label' => __('No')]
+            ['value' => '', 'label' => ''],
+            ['value' => true, 'label' => (string)__('Abandoned')],
+            ['value' => false, 'label' => (string)__('No')]
         ];
     }
 }
