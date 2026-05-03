@@ -87,6 +87,16 @@
                     <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
                 </field>
             </group>
+
+            <group id="cache" translate="label,comment" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Cache</label>
+                <field id="warm_with_cron" translate="label" type="select" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Warm with Cron</label>
+                    <comment>With this cron you can keep the dashboard cache warm with a cron. After any cache flush, the cron will re-warm it.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+            </group>
         </section>
     </system>
 </config>

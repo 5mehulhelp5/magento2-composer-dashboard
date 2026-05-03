@@ -12,6 +12,7 @@ class Settings
     private const XPATH_OUTDATED_RECIPIENTS = 'corrivate_composer_dashboard/outdated_packages/recipients';
     private const XPATH_OUTDATED_IGNORED_PACKAGES = 'corrivate_composer_dashboard/outdated_packages/ignored_packages';
     private const XPATH_API_ENABLED = 'corrivate_composer_dashboard/api/enabled';
+    private const XPATH_WARM_CACHE = 'corrivate_composer_dashboard/cache/warm_with_cron';
 
     public function __construct(
         private readonly ScopeConfigInterface $scopeConfig,
@@ -85,5 +86,10 @@ class Settings
         $items = explode("\n", $value);
         $items = array_map(fn ($item) => trim($item), $items);
         return array_filter($items);
+    }
+
+    public function warmCache(): bool
+    {
+        return (bool)$this->scopeConfig->getValue(self::XPATH_WARM_CACHE);
     }
 }

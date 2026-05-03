@@ -7,6 +7,7 @@
 * Change docblocks in interfaces that broke SOAP wsdl
 ### Added
 * PHP 8.1 compatibility
+* Add config to enable/disable cache warming with cron.
 
 ## 0.6.1
 ### Fixed

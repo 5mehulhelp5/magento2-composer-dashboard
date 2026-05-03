@@ -13,6 +13,10 @@
             <api>
                 <enabled>0</enabled>
             </api>
+
+            <cache>
+                <warm_with_cron>1</warm_with_cron>
+            </cache>
         </corrivate_composer_dashboard>
     </default>
 </config>
