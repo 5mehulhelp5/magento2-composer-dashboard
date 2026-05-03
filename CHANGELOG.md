@@ -1,5 +1,9 @@
 # Changelog
 
+## Unversioned
+### Fixed
+- PHPStan level 8
+
 ## 0.6.1
 ### Fixed
 * Handle null latest_release_date in composer output.
